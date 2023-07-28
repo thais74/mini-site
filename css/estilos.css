@@ -1,0 +1,222 @@
+/* Regras de CSS para o Site de Exemplo
+O que você fizer aqui formatar TODAS as páginas
+HTML conectadas com este arquivo. */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Merriweather:ital,wght@1,300&family=Mynerve&family=Noto+Sans+JP&family=Noto+Serif&family=Tilt+Neon&family=Vollkorn&display=swap');
+
+* {box-sizing: border-box;}
+
+body {
+    background-image: url(../imagens/watercolor.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+#container {
+    background-image: linear-gradient(rgba(243, 163, 243, 0.651), rgba(255, 118, 118, 0.527), rgba(255, 238, 200, 0.418));
+    width: 80%;
+    border-radius: 35px;
+    padding: 12px;
+    margin: auto;
+    max-width: 1300px;
+    min-width: 600px;
+    box-shadow: 10px 10px 10px rgb(224, 147, 160);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(250, 102, 127, 0.918);
+  
+}
+
+h1 {
+    color: white;
+    padding: 10px;
+    text-shadow: black 2px 2px 2px;
+    font-family: 'Vollkorn', serif;
+    font-weight: normal;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 1px 5px 5px;
+
+
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(213,148,233,1) 100%);
+}
+
+
+h2 {
+    color: white;
+    background-image: url(../imagens/oriental-tiles.png);
+    padding: 10px;
+    border-left: 10px rgb(243, 82, 109) solid;
+    border-radius: 8px;
+    text-align: center;
+
+    border-right: 10px rgb(243, 82, 109) solid;
+}
+
+.centralizar {text-align: center;}
+.sombra-texto {text-shadow: black 1px 1px 5px;}
+.borda-arredondada {border-radius: 8px;}
+.destaque {background-color: rgb(243, 219, 255);
+    /* primeiro valor (cima/embaixo)
+    segundo valor (esquerda/direita) */
+    padding: 2px 2px 4px 4px;
+    border: solid 2px rgb(248, 91, 222);
+}
+
+figure {
+    text-align: center;
+    max-width: 419px;
+
+    position: relative;
+    margin: 0 auto;
+
+}
+
+figcaption {
+    width: 100%;
+    font-weight: bold;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+
+    right: 0;
+    bottom: 2px;
+}
+
+figure img {
+    filter: grayscale(100%);
+    transition: 1s;
+}
+
+figure img:hover {
+    filter: none;
+    transform: scale(1.02);
+}
+
+/* Seletor DESCENDENTE
+Selecionar todas as imagens */
+
+
+
+
+nav { text-align: center;}
+
+nav a {
+    color:rgb(252, 99, 150);
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    width: 33.33%;
+    display: inline-block;
+    border: solid 2px rgba(252, 117, 180, 0.774);
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+nav a:hover, nav a:focus {
+    background-color: rgba(250, 166, 201, 0.925);
+    transform: translateY(-5px);
+}
+
+ul { font-family: impact;}
+ul li { color: red;}
+
+ul li:first-child { color: blueviolet;}
+
+ul li:last-child { color: blueviolet;}
+
+
+.flutuar {
+    float: left;
+    margin-right: 10px;
+}
+
+/* Etapa 1: regra de animação */
+@keyframes animaCores {
+    from {
+        background-color: peachpuff;
+        color: palevioletred;
+    }
+
+    to {
+        background-color: palevioletred;
+        color: peachpuff;
+    }
+}
+
+/* Etapa 2: aplicar a animação em algum(ns) elementos */
+
+
+.subtitulo1, h3, h4 {
+    animation-name: animaCores;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#banner {
+    width: 500px;
+    margin: auto;
+    border: solid 2px white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+@keyframes animaBanner {
+    from { transform: translateX(-128px);}
+
+    to { 
+        transform: translateX(450px) 
+        rotate(360deg)
+        scale(0.1);
+        
+    }
+}
+
+#banner img {
+    animation-name: animaBanner;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    
+}
+
+@keyframes cssFundo{
+    from {
+        transform: scale(1.5)
+    }
+     
+    to { 
+        transform: scale(2.5);
+        filter: hue-rotate();
+    }
+}
+
+#animacss {
+    animation-name: cssFundo;
+    width: 100%;
+    top: 50px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(221, 160, 221, 0.548);
+    font-size: 100%;
+    font-weight: bold;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: white;
+    animation-timing-function: ease-in-out;
+}
